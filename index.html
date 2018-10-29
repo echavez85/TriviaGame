@@ -1,16 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <title>Rupaul's Trivia Race</title>
 </head>
+
 <body>
-    
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Drag Race Trivia!</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" id="quiz">
+                <form>
+                    <p>Who was the winner of Season 5 of Rupaul's Drag Race?</p>
+                    <input id="multiplechoice" type="radio" name="question1" value="Alaska"> Alaska
+                    <input id="multiplechoice" type="radio" name="question1" value="Roxxxy"> Roxxxy Andrews
+                    <input id="multiplechoice" type="radio" name="question1" value="Jinkx"> Jinkx Monsoon
+                    <input id="multiplechoice" type="radio" name="question1" value="Detox"> Detox
+                    <br>
+                    <br>
+                    <p>What season did Michelle Visage join the judge's panel?</p>
+                    <input id="multiplechoice" type="radio" name="question2" value="Season3"> Season 3
+                    <input id="multiplechoice" type="radio" name="question2" value="Season8"> Season 8
+                    <input id="multiplechoice" type="radio" name="question2" value="Season4"> Season 4
+                    <input id="multiplechoice" type="radio" name="question2" value="Season7"> Season 7
+                    <br>
+                    <br>
+                    <p>Which queen is known for the catchphrase "Back Rolls?"?</p>
+                    <input id="multiplechoice" type="radio" name="question3" value="Coco"> Coco Montrese
+                    <input id="multiplechoice" type="radio" name="question3" value="Adore"> Adore Delano
+                    <input id="multiplechoice" type="radio" name="question3" value="Alyssa"> Alyssa Edwards
+                    <input id="multiplechoice" type="radio" name="question3" value="Tatianna"> Tatianna
+                    <br>
+                    <br>
+                    <p>Which Season 8 queen never had to lip sync for her life?</p>
+                    <input id="multiplechoice" type="radio" name="question4" value="Bob"> Bob the Drag Queen
+                    <input id="multiplechoice" type="radio" name="question4" value="Naomi"> Naomi Smalls
+                    <input id="multiplechoice" type="radio" name="question4" value="KimChi"> Kim Chi
+                    <input id="multiplechoice" type="radio" name="question4" value="Naysha"> Naysha Lopez
+                    <br>
+                    <br>
+                    <p>Which two queens returned after an iconic lip sync during All Stars Season 2?</p>
+                    <input id="multiplechoice" type="radio" name="question5" value="AlaskaDetox"> Alaska & Detox
+                    <input id="multiplechoice" type="radio" name="question5" value="AlyssaTatianna"> Alyssa Edwards & Tatianna
+                    <input id="multiplechoice" type="radio" name="question5" value="KatyaRoxxxy"> Katya & Roxxxy Andrews
+                    <input id="multiplechoice" type="radio" name="question5" value="CocoPhiPhi"> Coco Montrese & PhiPhi O'Hara
+                    <br>
+                    <br>
+                    <p>Who was the winner of Season 6 of Rupaul's Drag Race?</p>
+                    <input id="multiplechoice" type="radio" name="question6" value="Bianca"> Bianca del Rio
+                    <input id="multiplechoice" type="radio" name="question6" value="Courtney"> Courtney Act
+                    <input id="multiplechoice" type="radio" name="question6" value="Adore"> Adore Delano
+                    <input id="multiplechoice" type="radio" name="question6" value="Darienne"> Darienne Lake
+                    <br>
+                    <br>
+                    <p>Which two queens returned after an iconic lip sync during All Stars Season 2?</p>
+                    <input id="multiplechoice" type="radio" name="question7" value="AlaskaDetox"> Alaska & Detox
+                    <input id="multiplechoice" type="radio" name="question7" value="AlyssaTatianna"> Alyssa Edwards & Tatianna
+                    <input id="multiplechoice" type="radio" name="question7" value="KatyaRoxxxy"> Katya & Roxxxy
+                    <input id="multiplechoice" type="radio" name="question7" value="CocoPhiPhi"> Coco Montrese & PhiPhi O'Hara
+                    <br>
+                    <br>
+                    <p>Which two queens returned after an iconic lip sync during All Stars Season 2?</p>
+                    <input id="multiplechoice" type="radio" name="question8" value="AlaskaDetox"> Alaska & Detox
+                    <input id="multiplechoice" type="radio" name="question8" value="AlyssaTatianna"> Alyssa Edwards & Tatianna
+                    <input id="multiplechoice" type="radio" name="question8" value="KatyaRoxxxy"> Katya & Roxxxy
+                    <input id="multiplechoice" type="radio" name="question8" value="CocoPhiPhi"> Coco Montrese & PhiPhi O'Hara
+                    <br>
+                    <br>
+                    <p>Which two queens returned after an iconic lip sync during All Stars Season 2?</p>
+                    <input id="multiplechoice" type="radio" name="question9" value="AlaskaDetox"> Alaska & Detox
+                    <input id="multiplechoice" type="radio" name="question9" value="AlyssaTatianna"> Alyssa Edwards & Tatianna
+                    <input id="multiplechoice" type="radio" name="question9" value="KatyaRoxxxy"> Katya & Roxxxy
+                    <input id="multiplechoice" type="radio" name="question9" value="CocoPhiPhi"> Coco Montrese & PhiPhi O'Hara
+                    <br>
+                    <br>
+                    <p>Which two queens returned after an iconic lip sync during All Stars Season 2?</p>
+                    <input id="multiplechoice" type="radio" name="question10" value="AlaskaDetox"> Alaska & Detox
+                    <input id="multiplechoice" type="radio" name="question10" value="AlyssaTatianna"> Alyssa Edwards & Tatianna
+                    <input id="multiplechoice" type="radio" name="question10" value="KatyaRoxxxy"> Katya & Roxxxy
+                    <input id="multiplechoice" type="radio" name="question10" value="CocoPhiPhi"> Coco Montrese & PhiPhi O'Hara
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+
 </body>
+
 </html>
