@@ -37,3 +37,27 @@ var question04 = {
     correct: "Katya",
     image: "./assets/images/katyasplits.gif"
 };
+
+var question05 = {
+    question: "Which two queens returned after an iconic lip sync during All Stars Season 2?",
+    answerChoices: ["Alaska & Detox", "Alyssa Edwards & Tatianna", "Katya & Roxxxy Andrews", "Coco Montrese & PhiPhi O'Hara"],
+    values: ["incorrect", "correct", "incorrect", "incorrect"],
+    correct: "Alyssa Edwards & Tatianna",
+    image: "./assets/images/alyssatati.gif"
+};
+
+var question06 = {
+    question: "Which queen is known for her workroom entrance death drop?",
+    answerChoices: ["Shangela", "Laganja Estranja", "Magnolia Crawford", "Gia Gunn"],
+    values: ["incorrect", "correct", "incorrect", "incorrect"],
+    correct: "Laganja Estranja",
+    image: "./assets/images/laganjadeathdrop.gif"
+};
+
+var question07 = {
+    question: "Which queen's jumping split fakeout had the judges rolling with laughter during Season 10?",
+    answerChoices: ["Monet X Change", "Aquaria", "Miz Cracker", "Kameron Michaels"],
+    values: ["correct", "incorrect", "incorrect", "incorrect"],
+    correct: "Monet X Change",
+    image: "./assets/images/monetfake.gif"
+};
