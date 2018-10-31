@@ -61,3 +61,27 @@ var question07 = {
     correct: "Monet X Change",
     image: "./assets/images/monetfake.gif"
 };
+
+var question08 = {
+    question: "Which Season 5 queen snatched the judge's wigs with her own wig under a wig reveal?",
+    answerChoices: ["Detox", "Jinkx Monsoon", "Roxxxy Andrews", "Alaska"],
+    values: ["incorrect", "incorrect", "correct", "incorrect"],
+    correct: "Roxxxy Andrews",
+    image: "./assets/images/roxxxywig.gif"
+};
+
+var question09 = {
+    question: "Which Season 9 queen made jaws drop with her rose petals under wig reaveal during the Season 9 finale?",
+    answerChoices: ["Sasha Velour", "Shea Coulee", "Trinity Taylor", "Peppermint"],
+    values: ["correct", "incorrect", "incorrect", "incorrect"],
+    correct: "Sasha Velour",
+    image: "./assets/images/sasharoses.gif"
+};
+
+var question10 = {
+    question: "Which Season 7 queen inspired the All Stars Season 2 two-in-one look challenge?",
+    answerChoices: ["Miss Fame", "Pearl", "Max", "Violet Chachki"],
+    values: ["incorrect", "incorrect", "incorrect", "correct"],
+    correct: "Violet Chachki",
+    image: "./assets/images/violetreveal.gif"
+};
