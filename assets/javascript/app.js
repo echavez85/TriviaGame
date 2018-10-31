@@ -19,7 +19,7 @@
 // "Next Question" button below gif will advance user to next question in the questions array.
 
 
-// After 10th question is answered, alert will display number of right, wrong, and unanswered questions.
+// After 10th question is answered or time runs out on 10th question, alert will display number of right, wrong, and unanswered questions and give player option to try again.
 
 
 
