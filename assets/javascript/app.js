@@ -85,3 +85,6 @@ var question10 = {
     correct: "Violet Chachki",
     image: "./assets/images/violetreveal.gif"
 };
+
+var questionsArray = [question01, question02, question03, question04, question05, question06, question07, question08, question09, question10];
+
