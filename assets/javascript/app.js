@@ -13,3 +13,12 @@ var question01 = {
     image: "./assets/images/ajadeathdrop.gif"
 };
 
+
+var question02 = {
+    question: "Which queen is known for popularizing the catchphrase 'Not today, Satan'?",
+    answerChoices: ["Joslyn Fox", "Darienne Lake", "Vivacious", "Bianca del Rio"],
+    values: ["incorrect", "incorrect", "incorrect", "correct"],
+    correct: "Aja",
+    image: "./assets/images/biancanottoday.gif"
+};
+
