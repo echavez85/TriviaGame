@@ -88,3 +88,14 @@ var question10 = {
 
 var questionsArray = [question01, question02, question03, question04, question05, question06, question07, question08, question09, question10];
 
+function startGame() {
+    $("#content").empty();
+    var startButton = $("<button>");
+    startButton.text("Gentlemen, Start Your Engines");
+    startButton.addClass("start btn btn-default answerBtn");
+    $("#content").append(startButton);
+};
+
+function run() {
+    intervalId = setInterval(decrement, 1000);
+};
