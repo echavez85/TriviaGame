@@ -141,7 +141,7 @@ function questionWrite(object) {
     for (var i = 0; i < object.answerChoices.length; i++) {
         var answerButton = $("<button>");
         answerButton.addClass("answer btn btn-default answerButton");
-        answerButton.text(object.values[i]);
+        answerButton.text(object.answerChoices[i]);
         $("#content").append(answerButton);
         $("#content").append("<br>");
     };
