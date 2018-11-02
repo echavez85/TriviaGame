@@ -4,6 +4,7 @@ var intervalId = "";
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
+var arrayPicker = 0;
 
 var question01 = {
     question: "Which queen did a jumping death drop from a box during All Stars Season 3?",
@@ -91,11 +92,124 @@ var questionsArray = [question01, question02, question03, question04, question05
 function startGame() {
     $("#content").empty();
     var startButton = $("<button>");
-    startButton.text("Gentlemen, Start Your Engines");
-    startButton.addClass("start btn btn-default answerBtn");
+    startButton.text(`Gentlemen, Start Your Engines`);
+    startButton.addClass("start btn btn-default answerButton");
     $("#content").append(startButton);
 };
 
 function run() {
     intervalId = setInterval(decrement, 1000);
 };
+
+function decrement() {
+    time--;
+    $("#timerHolder").html(`Time Left: ${time} Seconds`);
+    if (time == 0) {
+        if (arrayPicker < questionsArray.length - 1) {
+            setTimeout(function () {
+                questionWrite(questionsArray[arrayPicker])
+            }, 1400);
+            solutionWrite(questionsArray[arrayPicker]);
+            $("#questionHolder").html("Wrong!");
+            stop();
+            unanswered++;
+        }
+        else if (arrayPicker < questionsArray.length) {
+            setTimeout(function () {
+                endWrite(questionsArray[arrayPicker])
+            }, 1500);
+            solutionWrite(questionsArray[arrayPicker]);
+            $("#questionHolder").html("Wrong!");
+            stop();
+            unanswered++;
+        }
+    };
+};
+
+function stop() {
+    clearInterval(intervalId);
+};
+
+function questionWrite(object) {
+    time = 15;
+    $("#timerHolder").empty();
+    $("#timerHolder").html(`Time Left: ${time} Seconds`);
+    $("#questionHolder").empty();
+    $("#content").empty();
+    run();
+    $("#questionHolder").html(object.question);
+    for (var i = 0; i < object.answerChoices.length; i++) {
+        var answerButton = $("<button>");
+        answerButton.addClass("answer btn btn-default answerButton");
+        answerButton.text(object.values[i]);
+        $("#content").append(answerButton);
+        $("#content").append("<br>");
+    };
+};
+
+function solutionWrite(object) {
+    $("#questionHolder").empty();
+    $("#content").empty();
+    $("#content").html(`The correct answer was ${object.correct} <br>`);
+    var queenImage = $("<img>");
+    queenImage.attr("height", "250");
+    queenImage.attr("src", object.image);
+    queenImage.addClass("queen");
+    $("#conent").append(queenImage);
+    arrayPicker++;
+};
+
+function beginWrite() {
+    questionWrite(question01);
+};
+
+function selectAnswer() {
+    stop();
+    if ($(this).attr("value") == "correct") {
+        solutionWrite(questionsArray[arrayPicker]);
+        $("#questionHolder").html("Correct!");
+        correct++;
+        if (arrayPicker < questionsArray.length) {
+            setTimeout(function () { questionWrite(questionsArray[arrayPicker]) }, 1500);
+        }
+        else if (arrayPicker < questionsArray.length + 1) {
+            setTimeout(function () { endWrite(questionsArray[arrayPicker]) }, 1500);
+        }
+    }
+    else if ($(this).attr("value") == "incorrect") {
+        solutionWrite(questionsArray[arrayPicker]);
+        $("#questionHolder").html("Incorrect!");
+        incorrect++;
+        if (arrayPicker < questionsArray.length) {
+            setTimeout(function() { questionWrite(questionsArray[arrayPicker]) }, 1500);
+        }
+        else if (arrayPicker < questionsArray.length + 1) {
+            setTimeout(function () { endWrite(questionsArray[arrayPicker]) }, 1500);
+        }
+    }
+};
+
+function endWrite() {
+    $("#questionHolder").empty();
+    $("#content").empty();
+    $("#questionHolder").html("Here's how you did!");
+    $("#content").html(`<p>Correct: ${correct} </p><br><p>Incorrect: ${incorrect}</p><br><p>Unanswered: ${unanswered}</p>`);
+    var resetButton = $("<button>");
+    resetButton.addClass("reset btn btn-default answerButton");
+    resetButton.text("Would You Like to Take Another Lap?");
+    $("#content").append(resetButton);
+}
+
+function resetClick() {
+    arrayPicker = 0;
+    incorrect = 0;
+    correct = 0;
+    unanswered = 0;
+    beginWrite();
+}
+
+$(document).on("click", ".start", beginWrite);
+$(document).on("click", ".answer", selectAnswer);
+$(document).on("click", ".reset", resetClick);
+
+startGame();
