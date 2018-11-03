@@ -6,6 +6,7 @@ var incorrect = 0;
 var unanswered = 0;
 var arrayPicker = 0;
 
+// Make each question its own variable with the answers as attributes as well as the image I want displayed upon answering.
 var question01 = {
     question: "Which queen did a jumping death drop from a box during All Stars Season 3?",
     answerChoices: ["Milk", "Morgan McMichaels", "Aja", "Trixie Mattel"],
@@ -86,8 +87,10 @@ var question10 = {
     image: "./assets/images/violetreveal.gif"
 };
 
+// Turn questions into one array.
 var questionsArray = [question01, question02, question03, question04, question05, question06, question07, question08, question09, question10];
 
+// 
 function startGame () {
     $("#content").empty();
     var startButton = $("<button>");
