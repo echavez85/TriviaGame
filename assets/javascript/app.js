@@ -14,7 +14,6 @@ var question01 = {
     image: "./assets/images/ajadeathdrop.gif"
 };
 
-
 var question02 = {
     question: "Which queen is known for popularizing the catchphrase 'Not today, Satan'?",
     answerChoices: ["Joslyn Fox", "Darienne Lake", "Vivacious", "Bianca del Rio"],
@@ -89,7 +88,7 @@ var question10 = {
 
 var questionsArray = [question01, question02, question03, question04, question05, question06, question07, question08, question09, question10];
 
-function startGame() {
+function startGame () {
     $("#content").empty();
     var startButton = $("<button>");
     startButton.text(`Gentlemen, Start Your Engines`);
@@ -108,7 +107,7 @@ function decrement() {
         if (arrayPicker < questionsArray.length - 1) {
             setTimeout(function () {
                 questionWrite(questionsArray[arrayPicker])
-            }, 1400);
+            }, 1500);
             solutionWrite(questionsArray[arrayPicker]);
             $("#questionHolder").html("Wrong!");
             stop();
@@ -142,6 +141,7 @@ function questionWrite(object) {
         var answerButton = $("<button>");
         answerButton.addClass("answer btn btn-default answerButton");
         answerButton.text(object.answerChoices[i]);
+        answerButton.attr("value", object.values[i]);
         $("#content").append(answerButton);
         $("#content").append("<br>");
     };
@@ -155,7 +155,7 @@ function solutionWrite(object) {
     queenImage.attr("height", "250");
     queenImage.attr("src", object.image);
     queenImage.addClass("queen");
-    $("#conent").append(queenImage);
+    $("#content").append(queenImage);
     arrayPicker++;
 };
 
