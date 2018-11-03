@@ -90,7 +90,7 @@ var question10 = {
 // Turn questions into one array.
 var questionsArray = [question01, question02, question03, question04, question05, question06, question07, question08, question09, question10];
 
-// 
+// Function for start of game to be empty with a button to start.
 function startGame () {
     $("#content").empty();
     var startButton = $("<button>");
@@ -99,14 +99,18 @@ function startGame () {
     $("#content").append(startButton);
 };
 
+// Function that will run the timer in one second decrements.
 function run() {
     intervalId = setInterval(decrement, 1000);
 };
 
+// Function starting 15 second timer.
 function decrement() {
     time--;
     $("#timerHolder").html(`Time Left: ${time} Seconds`);
+    // What to do once the timer hits 0.
     if (time == 0) {
+        // If not the last question, say times up, show the solution, and move onto next question.
         if (arrayPicker < questionsArray.length - 1) {
             setTimeout(function () {
                 questionWrite(questionsArray[arrayPicker])
@@ -116,6 +120,7 @@ function decrement() {
             stop();
             unanswered++;
         }
+        // If final question, say time's up, show solution, and show score.
         else if (arrayPicker < questionsArray.length) {
             setTimeout(function () {
                 endWrite(questionsArray[arrayPicker])
@@ -127,11 +132,12 @@ function decrement() {
         }
     };
 };
-
+// Create function to stop the timer when an answer is selected.
 function stop() {
     clearInterval(intervalId);
 };
 
+// Create function that will loop through push the questions and answer choices to the questionHolder div with 15 second timer.
 function questionWrite(object) {
     time = 15;
     $("#timerHolder").empty();
@@ -150,10 +156,11 @@ function questionWrite(object) {
     };
 };
 
+// Function that will display the correct answer and gif attribute of each question variable.
 function solutionWrite(object) {
     $("#questionHolder").empty();
     $("#content").empty();
-    $("#content").html(`The correct answer was ${object.correct} <br>`);
+    $("#content").html(`<p>The correct answer was ${object.correct}</p><br>`);
     var queenImage = $("<img>");
     queenImage.attr("height", "250");
     queenImage.attr("src", object.image);
@@ -162,16 +169,20 @@ function solutionWrite(object) {
     arrayPicker++;
 };
 
+// Create a function that will start with the first question.
 function beginWrite() {
     questionWrite(question01);
 };
 
+// Creat function that stops timer when an answerChoice is selected.
 function selectAnswer() {
     stop();
+    // If the button selected is correct, display that and increase correct number by 1.
     if ($(this).attr("value") == "correct") {
         solutionWrite(questionsArray[arrayPicker]);
         $("#questionHolder").html("Correct!");
         correct++;
+        // Set a timer of 4.5 seconds for gif and correct result to be displayed.
         if (arrayPicker < questionsArray.length) {
             setTimeout(function () { questionWrite(questionsArray[arrayPicker]) }, 4500);
         }
@@ -179,10 +190,12 @@ function selectAnswer() {
             setTimeout(function () { endWrite(questionsArray[arrayPicker]) }, 4500);
         }
     }
+    // If button selected is wrong, dipslay incorrect and increase incorrect number by 1.
     else if ($(this).attr("value") == "incorrect") {
         solutionWrite(questionsArray[arrayPicker]);
         $("#questionHolder").html("Incorrect!");
         incorrect++;
+        // Set a timer of 4.5 seconds for gif and incorrect to be displayed, along with what correct answer was.
         if (arrayPicker < questionsArray.length) {
             setTimeout(function() { questionWrite(questionsArray[arrayPicker]) }, 4500);
         }
@@ -192,6 +205,7 @@ function selectAnswer() {
     }
 };
 
+// Create a function that will clear question and content div and then display results.
 function endWrite() {
     $("#questionHolder").empty();
     $("#content").empty();
@@ -203,6 +217,7 @@ function endWrite() {
     $("#content").append(resetButton);
 }
 
+// Ask player if they want to play again. Create function for button that will reset all global variables to 0 and start over.
 function resetClick() {
     arrayPicker = 0;
     incorrect = 0;
@@ -215,4 +230,5 @@ $(document).on("click", ".start", beginWrite);
 $(document).on("click", ".answer", selectAnswer);
 $(document).on("click", ".reset", resetClick);
 
+// Call the start of game function.
 startGame();
