@@ -8,11 +8,9 @@ body {
 }
 
 button {
-    background-color: magenta;
-    color: white;
+    background-color: white;
+    color: magenta;
     font-weight: bold;
-    border: 1px;
-    margin-bottom: 15px;
 }
 
 h1 {
@@ -20,15 +18,11 @@ h1 {
     font-weight: bold;
     background-color: white;
     margin-left: 350px;
-    margin-right: 350px;
+    margin-right: 350px
 }
 
 .container {
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 15px;
-    height: 600px;
-    padding-top: 30px;
 }
 
 #timerHolder {
@@ -47,13 +41,5 @@ h1 {
 
 p {
     font-size: 30px;
-}
-
-div {
-    background-color: white;
-}
-
-img {
-    margin-bottom: 15px;
 }
 
