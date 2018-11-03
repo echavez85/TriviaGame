@@ -8,17 +8,14 @@ body {
 }
 
 button {
-    background-color: white;
-    color: magenta;
+    background-color: magenta;
+    color: white;
     font-weight: bold;
 }
 
 h1 {
     font-size: 50px;
     font-weight: bold;
-    background-color: white;
-    margin-left: 350px;
-    margin-right: 350px
 }
 
 .container {
