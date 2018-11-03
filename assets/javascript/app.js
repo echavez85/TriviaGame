@@ -109,7 +109,7 @@ function decrement() {
                 questionWrite(questionsArray[arrayPicker])
             }, 1500);
             solutionWrite(questionsArray[arrayPicker]);
-            $("#questionHolder").html("Wrong!");
+            $("#questionHolder").html("Time's Up!");
             stop();
             unanswered++;
         }
@@ -118,7 +118,7 @@ function decrement() {
                 endWrite(questionsArray[arrayPicker])
             }, 1500);
             solutionWrite(questionsArray[arrayPicker]);
-            $("#questionHolder").html("Wrong!");
+            $("#questionHolder").html("Time's Up!");
             stop();
             unanswered++;
         }
@@ -170,10 +170,10 @@ function selectAnswer() {
         $("#questionHolder").html("Correct!");
         correct++;
         if (arrayPicker < questionsArray.length) {
-            setTimeout(function () { questionWrite(questionsArray[arrayPicker]) }, 1500);
+            setTimeout(function () { questionWrite(questionsArray[arrayPicker]) }, 4500);
         }
         else if (arrayPicker < questionsArray.length + 1) {
-            setTimeout(function () { endWrite(questionsArray[arrayPicker]) }, 1500);
+            setTimeout(function () { endWrite(questionsArray[arrayPicker]) }, 4500);
         }
     }
     else if ($(this).attr("value") == "incorrect") {
@@ -181,10 +181,10 @@ function selectAnswer() {
         $("#questionHolder").html("Incorrect!");
         incorrect++;
         if (arrayPicker < questionsArray.length) {
-            setTimeout(function() { questionWrite(questionsArray[arrayPicker]) }, 1500);
+            setTimeout(function() { questionWrite(questionsArray[arrayPicker]) }, 4500);
         }
         else if (arrayPicker < questionsArray.length + 1) {
-            setTimeout(function () { endWrite(questionsArray[arrayPicker]) }, 1500);
+            setTimeout(function () { endWrite(questionsArray[arrayPicker]) }, 4500);
         }
     }
 };
