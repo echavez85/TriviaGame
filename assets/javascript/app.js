@@ -209,6 +209,7 @@ function selectAnswer() {
 function endWrite() {
     $("#questionHolder").empty();
     $("#content").empty();
+    $("#timerHolder").empty();
     $("#questionHolder").html("Here's how you did!");
     $("#content").html(`<p>Correct: ${correct} </p><br><p>Incorrect: ${incorrect}</p><br><p>Unanswered: ${unanswered}</p>`);
     var resetButton = $("<button>");
